@@ -1,0 +1,48 @@
+Guia Detalhado para Executar o Projeto de Consulta Climática
+
+Este guia explica como configurar e executar a aplicação de consulta de clima.
+
+------------------------------------------------------------------
+
+**Passo 1: Obter uma Chave de API do OpenWeatherMap**
+
+Para que a aplicação possa buscar dados climáticos, ela precisa de uma chave de API (um código de autorização). Siga as instruções abaixo para obter uma gratuitamente.
+
+1.  Acesse o site [https://openweathermap.org/](https://openweathermap.org/).
+2.  Crie uma conta. Você precisará de um e-mail e uma senha.
+3.  Após criar a conta e fazer login, navegue até a aba "API keys" no seu painel de controle.
+4.  Uma chave de API padrão ("default") já terá sido criada para você. Copie essa chave (é uma sequência longa de letras e números).
+
+*Observação: Pode levar de alguns minutos a até uma hora para que a chave recém-criada seja ativada pela OpenWeatherMap.*
+
+------------------------------------------------------------------
+
+**Passo 2: Adicionar a Chave da API ao Código do Projeto**
+
+Agora que você tem a chave, precisa inseri-la no arquivo de script do projeto.
+
+1.  Abra o seguinte arquivo em um editor de texto ou código: `js/script.js`.
+2.  Dentro do arquivo, localize as linhas que contêm o texto `'SUA_CHAVE_AQUI'`.
+    Você encontrará isso dentro das funções `fetchWeather` e `axiosWeather`.
+
+    Exemplo:
+    `const apiKey = 'SUA_CHAVE_AQUI'; // <-- SUBSTITUA PELA SUA CHAVE`
+
+3.  Substitua `SUA_CHAVE_AQUI` pela chave de API que você copiou do site OpenWeatherMap. Cole a chave entre as aspas simples.
+
+    Exemplo após a alteração:
+    `const apiKey = 'a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4'; // <-- SUBSTITUA PELA SUA CHAVE`
+
+4.  Salve o arquivo `js/script.js` após fazer a alteração.
+
+------------------------------------------------------------------
+
+**Passo 3: Executar a Aplicação**
+
+Com a chave configurada, a aplicação está pronta para ser usada.
+
+1.  Encontre o arquivo `index.html` na pasta principal do projeto.
+2.  Abra este arquivo com qualquer navegador de internet (Google Chrome, Firefox, Edge, etc.).
+3.  A página de "Consulta Climática" será exibida.
+4.  Digite o nome de uma cidade no campo de texto, escolha um método (`Fetch` ou `Axios`) e clique no botão "Consultar".
+5.  Se tudo estiver correto, o clima atual da cidade pesquisada será exibido na tela.
